@@ -16,9 +16,11 @@ speech_to_text = SpeechToTextV1(
 
 #print(json.dumps(speech_to_text.get_model('en-US_BroadbandModel'), indent=2))
 
+outputData = open("output.txt", 'w')
+
 with open(join(dirname(__file__), inputPath),
           'rb') as audio_file:
-    print(
+    outputData.write(
         json.dumps(
             speech_to_text.recognize(
                 audio=audio_file,
@@ -26,4 +28,6 @@ with open(join(dirname(__file__), inputPath),
                 timestamps=True,
                 word_confidence=True),
             indent=2))
+    outputData.close()
+
 
