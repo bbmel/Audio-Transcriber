@@ -1,6 +1,6 @@
 # Audio-Transcriber
 
-![logo](https://ibb.co/i5Pwx7)
+<img src="https://ibb.co/i5Pwx7" width="100" height="100"/>
 
 Gets a user specified YouTube video and transcribes the audio to text using Watson Speech-to-Text. The script then categorizes the video by running Watson's Natural Language
 Text on the transcribed audio.
