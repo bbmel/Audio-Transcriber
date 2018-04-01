@@ -1,0 +1,22 @@
+{
+  "usage": {
+    "text_characters": 120, 
+    "features": 1, 
+    "text_units": 1
+  }, 
+  "categories": [
+    {
+      "score": 0.55312, 
+      "label": "/family and parenting/children"
+    }, 
+    {
+      "score": 0.17093, 
+      "label": "/law, govt and politics/politics/foreign policy"
+    }, 
+    {
+      "score": 0.157173, 
+      "label": "/business and industrial/energy/coal"
+    }
+  ], 
+  "language": "en"
+}
