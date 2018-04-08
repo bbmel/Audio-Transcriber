@@ -23,8 +23,8 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
   password='L6jdLKDF2Toj',
   version='2018-03-16')
 
-# IBM Watson for transcribing the audio
-outputData = open("output.json", 'w')
+# writes the audio transcript to 'sttOutput.json'
+outputData = open("sttOutput.json", 'w')
 
 with open(join(dirname(__file__), inputPath),
           'rb') as audio_file:
@@ -38,29 +38,30 @@ with open(join(dirname(__file__), inputPath),
             indent=2))
     outputData.close()
 
-# parsing the json file to an output file (transFile.txt)
-outputData2 = open('output.json', 'r')
+# parses through the json file and outputs the transcript to 'transFile.txt'
+outputData2 = open('sttOutput.json', 'r')
 outputDic = json.load(outputData2)
-transFile = open('transFile.txt', 'w')
+transFile = open('sttFile.txt', 'w')
 for k1 in outputDic['results']:
     for k2 in k1['alternatives']:
         transData = k2.get('transcript')
         transFile.write(transData)
 
-# for getting the category...
+# Watson NLP category
 response = natural_language_understanding.analyze(
   text=transData,
   features=Features(
     categories=CategoriesOptions()))
 
+# writes category to 'audioCat.json'
 outputCat = open('audioCat.json', 'w')
 outputCat.write(json.dumps(response, indent=2))
 outputCat.close()
 
-# for writing just the category to a file...
+# parses through the json file and outputs the category to 'catFile.txt'
 outputData3 = open('audioCat.json', 'r')
 outputDic = json.load(outputData3)
-catFile = open('catFile.txt', 'w')
+catFile = open('audioCatFile.txt', 'w')
 for k1 in outputDic['categories']:
     catData = k1.get('label')
     catList = str(catData).split('/')

@@ -1,0 +1,22 @@
+{
+  "usage": {
+    "text_characters": 11534, 
+    "features": 1, 
+    "text_units": 2
+  }, 
+  "categories": [
+    {
+      "score": 0.556749, 
+      "label": "/travel/tourist destinations/italy"
+    }, 
+    {
+      "score": 0.350245, 
+      "label": "/business and industrial"
+    }, 
+    {
+      "score": 0.314572, 
+      "label": "/finance/bank"
+    }
+  ], 
+  "language": "en"
+}
